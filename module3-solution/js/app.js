@@ -78,8 +78,9 @@
 	NarrowItDownController.$inject=['MenuSearchService'];
 	function NarrowItDownController(MenuSearchService){
 		var ctrl = this;
-
+		
 		ctrl.NarrowIt= function(){
+			ctrl.found=[];
 			if (ctrl.searchTerm==undefined || ctrl.searchTerm ==""){
 
 				ctrl.mensaje=true;
@@ -94,6 +95,7 @@
 					//if(.length < 1){
 						ctrl.mensaje=ctrl.isEmpty(ctrl.found);
 					//}
+
 				})
 				
 				
