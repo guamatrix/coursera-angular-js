@@ -1,9 +1,12 @@
 (function(){
 	'use strict';
-	angular.module('Loading',[]);
+	angular.module('Loading',[])
+	.config(config);
 
-	angular.module('Loading')
-	.run(function(){
-		console.log("Loading run");
-	});
+	config.$inject=['$httpProvider'];
+	function config($httpProvider){
+		$httpProvider.interceptors.push('loadingHttpInterceptor');	
+	}
+
+
 })();
